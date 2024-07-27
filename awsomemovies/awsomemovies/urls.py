@@ -16,14 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from moviescollection import views
-from contactus import views as c
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('moviescollection.urls')),
     path('contact/',include('contactus.urls')),
     path('about/', include('aboutus.urls')),
-
-    
+    path('post/', include('community.urls')),
+     
 ]
+
+# urlpatterns += static(settings.MEDIA_URL, documment_root=settings.MEDIA_ROOT)
