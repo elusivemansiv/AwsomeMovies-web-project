@@ -7,6 +7,6 @@ def community(request):
       return render(request, 'post4/post.html',{'posts': posts})
 
 def post_page(request, slug):
-      return HttpResponse(slug)
+      post = Posts.objects.get(slug=slug)
+      return render(request, 'post4/post_page.html',{'post': post})
 
-     

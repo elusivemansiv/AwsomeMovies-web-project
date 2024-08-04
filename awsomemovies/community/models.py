@@ -6,7 +6,7 @@ class Posts(models.Model):
     message = models.TextField()
     slug = models.SlugField()
     date = models.DateField()
-    # postby =
+    banner = models.ImageField(default='fallback.png', blank=True)
 
 
     def __str__(self):

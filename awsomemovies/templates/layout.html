@@ -42,8 +42,19 @@
           <li class="nav-item">
            <a class="nav-link" href="{% url 'posts' %} ">Community Post</a>
           </li>
+           <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:register' %}">Sign Up</a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin">Log In</a>
+          <a class="nav-link" href="{% url 'users:login' %}">Login</a>
+          </li>
+           <li class="nav-item">
+          <form action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary btn-lg">
+              LogOut
+            </button>
+          </form>
           </li>
         </ul>
       </div>

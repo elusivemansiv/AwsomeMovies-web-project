@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.community, name='posts'),
-    path('<slug:slug>', views.post_page, name='posts'),
+    path('post/<slug:slug>/', views.post_page, name='post_page'),
+    
 ]
